@@ -60,7 +60,7 @@ def welcome():
 
 @app.route('/api/v1.0/precipitation')
 def return_precipitation():
-    most_rc_date = get_most_rc_date()
+    #most_rc_date = get_most_rc_date()
     one_ago = most_rc_date - dt.timedelta(days=365)
 
     rc_prcp_data = session.query(Measurement.date, Measurement.prcp).\
@@ -79,7 +79,7 @@ def return_station_list():
 
 @app.route('/api/v1.0/tobs')
 def return_tobs():
-    most_rc_date = get_most_rc_date()
+    #most_rc_date = get_most_rc_date()
     one_ago = most_rc_date - dt.timedelta(days=365)
 
     recent_tobs_data = session.query(Measurement.date, Measurement.tobs).\
